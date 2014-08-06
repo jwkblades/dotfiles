@@ -34,6 +34,6 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-let g:airline_left_sep = 'â–¶'
-let g:airline_right_sep = 'â—€'
-let g:airline_symbols.branch = 'âŽ‡'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.branch = '⎇'
