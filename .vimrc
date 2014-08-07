@@ -20,6 +20,7 @@ se ruler
 filetype plugin indent on
 se modelines=0
 se nomodeline
+se bs=2
 
 colorscheme defaultPlus
 
