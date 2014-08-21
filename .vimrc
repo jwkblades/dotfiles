@@ -7,6 +7,7 @@ Bundle "gmarik/vundle"
 Bundle "bling/vim-airline"
 Bundle "vim-scripts/ZoomWin"
 Bundle "tpope/vim-fugitive"
+Bundle "elzr/json-vim"
 
 se ts=2
 se sts=2
