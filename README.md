@@ -12,4 +12,4 @@ Install [vundle](https://github.com/gmarik/Vundle.vim)
 
 Install the [defaultPlus](https://github.com/JamesB/defaultPlus) colorscheme
 
-Open vim and run `:BundleIntall`
+Open vim and run `:PluginIntall`
