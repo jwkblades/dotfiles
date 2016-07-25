@@ -10,17 +10,18 @@ fi
 
 export EDITOR=vim
 
+export FAE_EDIT="${EDITOR} -p"
 fae()
 {
     local pattern=""
     for part in "${@}"; do
         if [[ -n "${pattern}" ]]; then
-            pattern+=" -o"
+            pattern+="|"
         fi
-        pattern+=" -name ${part}"
+        pattern+="${part}"
     done
-    local files="$(find . -path ./build -prune -o -path ./.hg -prune -a -type f -o \( ${pattern} \) 2>/dev/null)"
-    $EDITOR -p ${files}
+    local files="$(ag -s -g ${pattern} 2>/dev/null)"
+    ${FAE_EDIT} ${files}
 }
 
 source /etc/Bartlet.sh
