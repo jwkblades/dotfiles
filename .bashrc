@@ -24,6 +24,31 @@ fae()
     ${FAE_EDIT} ${files}
 }
 
+wd()
+{
+    local cmd="${1}"
+    case "${cmd}" in
+        add)
+            ag --nonumbers -v "^${2}\t" ~/.wdcache > ~/.wdcache.new
+            mv ~/.wdcache.new ~/.wdcache
+            echo -e "${2}\t$(pwd)" >> ~/.wdcache
+            ;;
+        rem|remove) 
+            ag --nonumbers -v "^${2}\t" ~/.wdcache > ~/.wdcache.new
+            mv ~/.wdcache.new ~/.wdcache 
+            ;;
+        list) 
+            cat ~/.wdcache
+            ;;
+        *)
+            local d="$(ag --nonumbers "^${cmd}\t" ~/.wdcache | cut -f2 2>/dev/null)"
+            if [[ -n "${d}" ]]; then 
+                cd ${d} 
+            fi 
+            ;; 
+    esac
+}
+
 source /etc/Bartlet.sh
 
 bartlet_enable Prompt
