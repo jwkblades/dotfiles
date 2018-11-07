@@ -13,9 +13,10 @@ Bundle "elzr/vim-json"
 call vundle#end()
 filetype plugin indent on
 
-se ts=2
-se sts=2
-se sw=2
+se ts=4
+se sts=4
+se sw=4
+se et
 se ai
 se si
 se incsearch
@@ -25,6 +26,7 @@ se ruler
 se modelines=0
 se nomodeline
 se bs=2
+:filetype plugin on
 
 colorscheme defaultPlus
 
